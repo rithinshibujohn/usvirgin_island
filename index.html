@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+		
+
+	<style>
+		.form-select{
+			width: 50%;
+    		margin-left: 15px;
+		}
+		body {
+			margin-top: 20px;
+		}
+
+		.tabbtn, .row2btn{
+			font-size: 14px;
+		}
+		.navbar-custom {
+			background-color: #003f87;
+			/* Dark blue background */
+			position: relative;
+			height: 50px;
+			/* Adjust based on your preference */
+		}
+
+		.navbar-brand img {
+			width: 80px;
+			/* Adjust based on your logo size */
+			height: auto;
+			position: absolute;
+			top: 50%;
+			/* Center vertically */
+			transform: translateY(-50%);
+			margin-left: 20px;
+			/* Space from the left */
+		}
+
+		.navbar-text {
+			color: #ffffff;
+			/* White text */
+			font-size: 19px;
+			/* Larger text */
+			position: absolute;
+			left: 150px;
+			/* Space from the left */
+			top: 50%;
+			/* Center vertically */
+			transform: translateY(-50%);
+			white-space: nowrap;
+		}
+
+		.tabdiv .container {
+			padding-left: 0;
+			/* Remove default padding */
+		}
+
+		.tabdiv .row {
+			justify-content: start;
+			/* Align items to the start of the row */
+		}
+
+		.tabdiv .col {
+			padding-right: 10px;
+			/* Reduce spacing between buttons */
+		}
+
+		.tabdiv {
+			margin-top: 30px;
+		}
+
+.container{
+	padding-left: 0;
+	padding-right: 0;
+}
+		.search-bar-container {
+			padding: 10px;
+			box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+			/* Light gray background */
+			border-radius: 5px;
+			/* Rounded corners */
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			margin-left: 10px;
+			background-color: #ffffff;
+		}
+
+		.form-control {
+			margin-right: 5px;
+    		margin-left: 15px;
+			/* Space between elements */
+		}
+
+		.btn-outline-primary {
+			color: #fff;
+			/* White text color */
+			background-color: #007bff;
+			/* Bootstrap primary blue */
+			border-color: #007bff;
+			/* Border color same as background */
+		}
+
+		.dropdown-toggle::after {
+			margin-left: 10px;
+			/* Ensure spacing within dropdown */
+		}
+
+		.btn-primary {
+			background-color: #003f87;
+			/* New background color */
+			border-color: #4CAF50;
+			/* New border color */
+		}
+
+		.custom-flex-container {
+			display: flex;
+			align-items: center;
+			/* Vertically center the items */
+			margin-top: 16px;
+			/* 4rem top margin */
+		}
+
+		.custom-flex-container>.dropdown {
+			flex-shrink: 0;
+			/* Prevents the dropdown from shrinking */
+		}
+
+		.custom-flex-container>p {
+			margin-left: 16px;
+			/* Spacing between dropdown and paragraph */
+			margin-bottom: 0;
+			/* No bottom margin for alignment */
+		}
+
+		
+.card-header .title {
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+.filter-group {
+  border-bottom: 1px solid #e4e4e4;
+}
+.filter-group .card-header {
+  border-bottom: 0;
+}
+.filter-group:last-child {
+  border-bottom: 0;
+}
+
+.card-header .form-check {
+  margin-bottom: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+
+
+/* ================= lists ================= */
+[class*=list-] li:after {
+  visibility: hidden;
+  display: block;
+  content: "";
+  overflow: hidden;
+  height: 0;
+  clear: both;
+}
+.text-center {
+    padding: 10px;
+    text-align: center !important;
+    background-color: #003f87;
+    color: white;
+	width: 404px;
+}
+.list-icon {
+  list-style: none;
+  padding-left: 0;
+}
+.list-icon li {
+  margin-bottom: 7px;
+  position: relative;
+  padding-left: 30px;
+}
+.list-icon .icon {
+  width: 22px;
+  margin-right: 15px;
+  vertical-align: middle;
+  text-align: center;
+  color: #545454;
+  position: absolute;
+  top: 3px;
+  left: 0;
+}
+.list-icon span {
+  vertical-align: middle;
+}
+
+.list-bullet, .list-dots {
+  list-style: none;
+  padding-left: 0;
+}
+.list-bullet li, .list-dots li {
+  margin-bottom: 5px;
+  position: relative;
+  padding-left: 15px;
+}
+.list-bullet li::before, .list-dots li::before {
+  content: " ";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 7px;
+  border-radius: 100%;
+  height: 7px;
+  background: #ced4da;
+}
+.btn-outline-primary {
+    color: #fff;
+    background-color: #003f87;
+    border-color: #007bff;
+}
+.list-check {
+  padding-left: 0;
+  list-style: none;
+}
+.list-check > li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 7px;
+}
+.list-check > li::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 12px;
+  color: #00b517;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  content: "";
+}
+
+.list-normal {
+  list-style: none;
+  padding-left: 0;
+}
+.list-normal li {
+  padding-left: 1em;
+  margin-bottom: 7px;
+}
+.list-normal li:before {
+  content: "•";
+  color: #3167eb;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.list-menu {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+.list-menu li {
+  margin-bottom: 5px;
+}
+.list-menu a {
+  color: #343a40;
+}
+.list-menu a:hover {
+  color: #3167eb;
+}
+
+.card-header a{
+	color: #3167eb;
+	text-decoration: none;
+}
+
+.icon-control {
+  margin-top: 5px;
+  float: right;
+  font-size: 80%;
+}
+/* Filter Stack Structure */
+.filter-stack {
+    display: flex;
+}
+
+.filter-label-stack {
+    display: flex;
+    flex-direction: column;
+    margin-right: 1rem;
+    flex-basis: 150px;
+}
+
+.filter-input-stack {
+    display: flex;
+    flex-direction: column;
+	margin-right: 5rem;
+}
+
+.filter-inputs {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.filter-inputs input {
+    margin: 0 0.5rem;
+	font-size: 11px;
+    width: 99px;
+}
+
+.filter-between {
+    margin: 0 0.5rem;
+}
+
+/* General Styling for consistency */
+.form-control {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+	width: 80%;
+}
+
+.col-md-3{
+flex: 0 0 auto;
+width: 40%;
+}
+hr {
+    margin: 5px 0;
+    color: inherit;
+    border: 0;
+    border-top: var(--bs-border-width) solid;
+    opacity: .25;
+}
+.moreoption{
+    /* background-color: #cde1fd; */
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px
+}
+.bill-container {
+            border: 1px solid #dcdcdc;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 600px;
+            margin: 20px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .bill-label {
+            background-color: #fbbd08;
+            color: white;
+            font-size: 12px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .bill-number {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .bill-description {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        .bill-details {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .bill-details span {
+            font-weight: bold;
+        }
+        .download-link {
+            margin-right: 10px;
+        }
+        .status-container {
+            display: flex;
+            align-items: center;
+        }
+        .status {
+            background-color: #21ba45;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            margin-right: 10px;
+        }
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 10px 0;
+            margin-top: 10px;
+        }
+        .timeline-item {
+            font-size: 12px;
+            color: #2185d0;
+            text-align: center;
+            flex: 1;
+        }
+        .timeline-item:not(:last-child)::after {
+            content: '→';
+            color: #dcdcdc;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+		/* Status bar container */
+		.status-bar {
+            width: 100%;
+            height: 30px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .status-bar-item {
+            display: inline-block;
+            height: 100%;
+            padding: 0 10px;
+            text-align: center;
+            line-height: 30px;
+            color: #666;
+            border-right: 1px solid #ddd;
+        }
+
+        .status-bar-item.active {
+            background-color: #4CAF50; /* Green color for the active status */
+            color: #fff;
+        }
+
+		.expandable{
+			font-size: 13px;
+		}
+
+		.colmn{
+			width: 90%;
+		}
+
+
+</style>
+</head>
+
+<body>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<div class="navdiv">
+		<nav class="navbar navbar-custom">
+			<a class="navbar-brand" href="#">
+				<img src="img/logo.png" alt="Logo">
+			</a>
+			<div class="navbar-text">
+				35th Legislature of United States of Virgin Island
+			</div>
+		</nav>
+	</div>
+	<div class="tabdiv">
+		<div class="container text-left"> <!-- Changed to text-left -->
+			<div class="row">
+				<div class="col-auto"> <!-- Changed to col-auto for fitting content -->
+					<button class="btn btn-outline-primary tabbtn">
+						Bill Tracking
+					</button>
+				</div>
+				<div class="col-auto"> <!-- Changed to col-auto for fitting content -->
+					<button class="btn btn-outline-secondary tabbtn">
+						Member Search
+					</button>
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="container mt-2">
+					<div class="search-bar-container" style="position: relative; z-index: 2;">
+						<div class="dropdown">
+							<button class="btn btn-secondary dropdown-toggle row2btn" type="button" id="dropdownMenuButton1"
+								data-bs-toggle="dropdown" aria-expanded="false">
+								Legislation
+							</button>
+							<ul class="dropdown-menu row2btn" aria-labelledby="dropdownMenuButton1">
+								<li><a class="dropdown-item" href="#">Option 1</a></li>
+								<li><a class="dropdown-item" href="#">Option 2</a></li>
+								<li><a class="dropdown-item" href="#">Option 3</a></li>
+							</ul>
+						</div>
+						<input type="text" class="form-control row2btn" placeholder="Examples: 35">
+						<div class="dropdown">
+
+							<ul class="dropdown-menu row2btn" aria-labelledby="dropdownMenuButton2">
+								<li><a class="dropdown-item" href="#">Option 1</a></li>
+								<li><a class="dropdown-item" href="#">Option 2</a></li>
+								<li><a class="dropdown-item" href="#">Option 3</a></li>
+							</ul>
+						</div>
+						<button type="button" class="btn btn-primary row2btn">Search</button><br/>
+
+					</div>
+					
+    <div style="text-align: center; position: relative; z-index: 1;">
+		<span class="moreoption mt-1" data-bs-toggle="collapse" data-bs-target="#collapse_opt" aria-expanded="true">More Options
+		  <i class="fa fa-chevron-down"></i>
+		</span>
+	  </div>
+					<div class="filter-content collapse" id="collapse_opt">
+						<div class="container mt-5">
+							<div class="row mb-3">
+								<div class="col"></div>
+								<div class="col">
+
+									<form class="card" style="width: 800px; height: 600px; background: #ebf3ff; padding: 15px;">
+										<div class="row mb-2">
+											<div class="col">
+												<input type="checkbox" class="me-2">
+												<span class="expandable" >Act</span>
+												<input type="checkbox" class="me-2">
+												<span class="expandable">Resolution</span>
+											</div>
+											<div class="row mb-2 mt-2">
+												<select class="form-select expandable">
+													<option selected>Legislature</option>
+													<option >35 2021-2023</option>
+												</select>
+											</div>
+											<div class="row mb-2">
+												<!-- <label for="">Committee</label> -->
+												<input type="text" class="form-control expandable" placeholder="Subject">
+											</div>
+										</div>
+										<h6 class="expandable">Sponsor/Co-Sponsor</h6>
+										<div class="row mb-2">
+											<div class="col">
+												<input type="checkbox" class="me-2 expandable">
+												<span class="expandable">Sponsor</span>
+												<input type="checkbox" class="me-2 expandable">
+												<span class="expandable">Co-Sponsor</span>
+											</div>
+											<div class="col">
+												<span class="expandable">Committee</span>
+											</div>
+											</div>
+											
+											<div class="row mb-2">
+												<div class="col">
+													<input type="text" class="form-control expandable" >
+												</div>
+												<div class="col">
+													<input type="text" class="form-control expandable" placeholder="Committee">
+												</div>
+											</div>
+											
+											<div class="row mb-2">
+												<div class="col">
+													<h6 class="expandable">Date</h6>
+												</div>
+												<div class="col">
+													<h6 class="expandable">Legislature Numbers</h6>
+												</div>
+											</div>
+											
+											<div class="row mb-2">
+												<div class="col">
+													<input type="checkbox" class="me-2">
+													<span class="expandable">Approved</span>
+													<input type="checkbox" class="me-2">
+													<span class="expandable">Voted</span>
+													<input type="checkbox" class="me-2">
+													<span class="expandable" >Overwritten</span>
+												</div>
+												<div class="col">
+													<input type="checkbox" class="me-2">
+													<span class="expandable">Bill Number</span>
+													<input type="checkbox" class="me-2">
+													<span class="expandable">Act Number</span>
+													<input type="checkbox" class="me-2">
+													<span class="expandable">BR Number</span>
+												</div>
+											</div>
+											<div class="row mb-2">
+												<div class="col">
+													<div class="filter-inputs">
+														<span class="filter-label row2btn expandable">Date</span>
+		
+															<input class="form-control row2btn expandable" type="date" placeholder="Start Date">
+															<span class="filter-between row2btn expandable">Between</span>
+															<input class="form-control row2btn expandable" type="date" placeholder="End Date">
+														</div>
+												</div>
+												<div class="col">
+													<div class="col">
+														<input type="text" class="form-control expandable" placeholder="">
+													</div>
+												</div>
+											</div>
+											<div class="row mb-2">
+												<div class="col">
+													<input type="checkbox" class="me-2">
+													<span class="expandable">Assigned</span>
+													<input type="checkbox" class="me-2">
+													<span class="expandable">Introduced</span>
+												</div>
+												<div class="col">
+													<input type="checkbox" class="me-2">
+													<span class="expandable">Resolution No.</span>
+													<input type="checkbox" class="me-2">
+													<span class="expandable">Ammendment No.</span>
+													<input type="checkbox" class="me-2">
+													<span class="expandable" >Governors No.</span>
+												</div>
+											</div>
+											<div class="row mb-2">
+												<div class="col">
+													<div class="filter-inputs">
+														<span class="filter-label row2btn expandable">Date</span>
+		
+															<input class="form-control row2btn expandable" type="date" placeholder="Start Date">
+															<span class="filter-between row2btn expandable">Between</span>
+															<input class="form-control row2btn expandable" type="date" placeholder="End Date">
+														</div>
+												</div>
+												<div class="col">
+													<div class="col">
+														<input type="text" class="form-control expandable" placeholder="">
+													</div>
+												</div>
+											</div>
+											<div class="row mb-2"></div>
+												<div class="col">
+													<input type="checkbox" class="me-2 expandable">
+													<span class="expandable">To Senator</span>
+													<input type="checkbox" class="me-2 expandable">
+													<span class="expandable">To Governor</span>
+													<input type="checkbox" class="me-2 expandable">
+													<span class="expandable" >To Lt. Governor</span>
+												</div>
+												<div class="row mb-2">
+													<div class="col">
+														<div class="filter-inputs">
+															<span class="filter-label row2btn">Date</span>
+			
+																<input class="form-control row2btn expandable" type="date" placeholder="Start Date">
+																<span class="filter-between row2btn expandable">Between</span>
+																<input class="form-control row2btn expandable" type="date" placeholder="End Date">
+															</div>
+													</div>
+													<div class="col">
+														<div class="col">
+															<button type="reset" class="btn btn-secondary">Clear Filter</button>					
+															<button type="submit" class="btn btn-primary">Search</button>
+															<button class="btn btn-secondary"  data-bs-toggle="collapse" data-bs-target="#collapse_opt" aria-expanded="true">Close
+															<i class="fa fa-chevron-up"></i></button>
+														</div>
+													</div>
+												</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					
+					</div>
+
+				</div>
+			</div>
+			<div class="container mt-4 hide1">
+				<div class="row">
+					<!-- Left Aligned Column for Filter and Pagination -->
+					<div class="col-md-8 d-flex align-items-center"> <!-- Adjust the column width and remove offset -->
+						<div class="dropdown">
+							<a class="btn btn-outline-secondary dropdown-toggle row2btn" id="hidefilter">
+								Hide Filter
+							</a>
+						</div>
+						<p class="mb-0 ms-3 row2btn">1-1000 of 530,29</p>
+						<button class="btn btn-outline-secondary btn-sm ms-2">&lt;</button>
+						<p class="mb-0 ms-3 row2btn"><button>1</button> of 5,303</p>
+						<button class="btn btn-outline-secondary btn-sm ms-2">&gt;</button>
+					</div>
+
+					<!-- Right Aligned Sorting Dropdown -->
+					<div class="col-md-4 d-flex justify-content-end align-items-center">
+						<p class="mb-0 me-3 row2btn">Sort by:</p>
+						<div class="dropdown">
+							<a class="btn btn-outline-secondary dropdown-toggle row2btn" href="#" role="button"
+								data-bs-toggle="dropdown" aria-expanded="false">
+								Number Decreasing
+							</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#">Action</a></li>
+								<li><a class="dropdown-item" href="#">Another action</a></li>
+								<li><a class="dropdown-item" href="#">Something else here</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<hr>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+		  <div class="col-4" id="hd">
+			<div class="main">
+				<section class="section-content padding-y ">
+					<div class="container">
+			
+						<div class="row">
+							<!-- Sidebar for Filters with Toggle Features -->
+							<aside class="col-md-3"  style="width: 100%;">
+								<div class="card mt-4" style="width: 100%;">
+									<h6 class="title text-center"  style="width: 100%;">Limit your search</h6>
+								
+									<article class="filter-group">
+										<header class="card-header">
+											<a href="#" class="" data-bs-toggle="collapse" data-bs-target="#collapse_1" aria-expanded="false">
+												<i class="icon-control fa fa-chevron-down"></i>
+												<h6 class="title">Dates</h6>
+											</a>
+										</header>
+										<div class="filter-content collapse" id="collapse_1">
+											<div class="card-body">
+												<ul class="list-menu">
+													<!-- Date Approved -->
+													<li class="filter-item">
+														<div class="filter-stack">
+															<div class="filter-label-stack">
+															</div>
+															<div class="filter-input-stack">
+																<div class="filter-inputs ">
+																	<span class="filter-label row2btn">Date Approved</span>
+																	<input class="form-control row2btn" type="date" placeholder="Start Date">
+																	<span class="filter-between row2btn">Between</span>
+																	<input class="form-control row2btn" type="date" placeholder="End Date">
+																</div>
+																<div class="filter-inputs">
+																	<span class="filter-label row2btn">Date Vetoed</span>
+																	<input class="form-control row2btn" type="date" placeholder="Start Date">
+																	<span class="filter-between row2btn">Between</span>
+																	<input class="form-control row2btn" type="date" placeholder="End Date">
+																</div>
+																<div class="filter-inputs">
+																	<span class="filter-label row2btn">Date Overwritten</span>
+																	<input class="form-control row2btn" type="date" placeholder="Start Date">
+																	<span class="filter-between row2btn">Between</span>
+																	<input class="form-control row2btn" type="date" placeholder="End Date">
+																</div>
+																<div class="filter-inputs">
+																	<span class="filter-label row2btn">Date Assigned</span>
+																	<input class="form-control" type="date" placeholder="Start Date">
+																	<span class="filter-between row2btn">Between</span>
+																	<input class="form-control row2btn" type="date" placeholder="End Date">
+																</div>
+																<div class="filter-inputs">
+																	<span class="filter-label row2btn">Date to Senator</span>
+																	<input class="form-control row2btn" type="date" placeholder="Start Date">
+																	<span class="filter-between row2btn">Between</span>
+																	<input class="form-control row2btn" type="date" placeholder="End Date">
+																</div>
+																<div class="filter-inputs">
+																	<span class="filter-label row2btn">Date Introduced</span>
+																	<input class="form-control row2btn" type="date" placeholder="Start Date">
+																	<span class="filter-between row2btn">Between</span>
+																	<input class="form-control row2btn" type="date" placeholder="End Date">
+																</div>
+																<div class="filter-inputs">
+																	<span class="filter-label row2btn">Date of Governor</span>
+																	<input class="form-control row2btn" type="date" placeholder="Start Date">
+																	<span class="filter-between row2btn">Between</span>
+																	<input class="form-control row2btn" type="date" placeholder="End Date">
+																</div>
+																<div class="filter-inputs">
+																	<span class="filter-label row2btn">Date to Lt.Governor</span>
+																	<input class="form-control row2btn" type="date" placeholder="Start Date">
+																	<span class="filter-between row2btn">Between</span>
+																	<input class="form-control row2btn" type="date" placeholder="End Date">
+																</div>
+															</div>
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</article>
+								
+									<article class="filter-group">
+										<header class="card-header bg-light border-bottom">
+											<a href="#" class="d-flex justify-content-between align-items " data-bs-toggle="collapse" data-bs-target="#collapse_4" aria-expanded="false">
+												<h6 class="title">Sponsors</h6>
+												<i class="fa fa-chevron-down"></i>
+											</a>
+										</header>
+								
+										<div class="filter-content collapse" id="collapse_4">
+											<div class="card-body">
+												<!-- Sponsor and Co-Sponsor Checkboxes -->
+												<div class="mb-3">
+													<label class="checkbox-btn d-block">
+														<input type="checkbox" class="me-2">
+														<span>Sponsors</span>
+													</label>
+													<label class="checkbox-btn d-block">
+														<input type="checkbox" class="me-2">
+														<span>Co-Sponsors</span>
+													</label>
+												</div>
+								
+												<!-- Dropdown Filters -->
+												<div class="mb-3">
+													<div class="container drp">
+														<div class="row">
+															<div class="col">
+																<label class="form-label">Sponsors</label>
+															</div>
+															<div class="col">
+																<select class="form-select colmn" aria-label="Committee Filter">
+																	<option selected>Choose Sponsor</option>
+																	<option value="1">Sponsor 1</option>
+																	<option value="2">Sponsor 2</option>
+																	<option value="3">Sponsor 3</option>
+																</select>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col">
+																<label class="form-label">Committee</label>
+															</div>
+															<div class="col">
+																<select class="form-select colmn" aria-label="Committee Filter">
+																	<option selected>Choose Committee</option>
+																	<option value="1">Committee 1</option>
+																	<option value="2">Committee 2</option>
+																	<option value="3">Committee 3</option>
+																</select>
+															</div>
+														</div>
+													</div>
+													<div class="filter-item">
+													</div>
+												</div>
+											</div>
+										</div>
+									</article>
+								</div>
+								
+							</aside>
+			
+							<!-- Main Content Area -->
+							
+						</div>
+					</div>
+				</section>
+			</div>
+		  </div>
+		  <div class="col mt-4">
+			<div class="card hide1" style=" width: 100%; height: 500px; background: #f5f8ff;">
+				<div class="card-body">
+				<div class="bill-label">BILL</div>
+				<div class="bill-number">Bill No - 35-0003</div>
+				<div class="bill-description">
+					An Act appropriating funds for the adoption of various portions of the Virgin Islands Agricultural Plan, submitted by the Agricultural Plan Task Force on December 29, 2021, as the official Agricultural Plan for the Territory
+				</div>
+				<div class="bill-details">
+					<div><span>Sponsor:</span> Nefranci (7)</div>
+					<div><span>Date Introduced:</span> 02-27-2023</div>
+					<div><span>Co-sponsor:</span> (0)</div>
+					<div><span>Committees:</span> GOVSERV</div>
+					<div>
+						<span>Act No.:</span> 8700 <a href="#" class="download-link">Download PDF</a>
+					</div>
+					<div>
+						<span>Resolution No.:</span> 1234 <a href="#" class="download-link">Download PDF</a> | 
+						<span>Amendment No.:</span> 4567 <a href="#" class="download-link">Download PDF</a> | 
+						<span>Governors No.:</span> 3986 <a href="#" class="download-link">Download PDF</a>
+					</div>
+					<div><span>Date Vetoed:</span> </div>
+					<div><span>Date Overridden:</span> </div>
+				</div>
+				<div><span>Status:</span> </div>
+				<div class="status-bar">
+					<div class="status-bar-item active">Assigned</div>
+					<div class="status-bar-item active">Introduced</div>
+					<div class="status-bar-item">Senator</div>
+					<div class="status-bar-item">Committee</div>
+					<div class="status-bar-item">Floor</div>
+					<div class="status-bar-item">Approved</div>
+					<div class="status-bar-item">Lt. Governor</div>
+					<div class="status-bar-item">Governor</div>
+				</div>
+			</div>
+		</div>
+		  </div>
+		</div>
+	  </div>
+	
+
+	  </div>
+	<script>
+		$(document).ready(function(){
+			$('#collapse_opt').on('shown.bs.collapse', function () {
+				$('.hide1').hide();
+				$('.main').hide();
+			});
+		
+			$('#collapse_opt').on('hidden.bs.collapse', function () {
+				$('.hide1').show();
+				$('.main').show();
+			});
+		});
+
+		$(document).ready(function(){
+  $('#hidefilter').click(function(){
+    $('#hd').toggle(); // This will toggle the visibility of elements with the .hd class
+  });
+});
+
+		</script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
